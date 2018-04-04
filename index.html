@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="assets/css/main.css" id="main_style">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,800" rel="stylesheet">
+	<link href="https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+	<title>Metered Usage Billing API Platform - BillingFox</title>
+</head>
+<body>
+
+<!--Switcher-->
+<!-- <div class="style-switcher">
+	<span class="style-switcher__control"></span>
+	<div class="style-switcher__list">
+		<a class="style-switcher__link style-switcher__link--red active"></a>
+		<a class="style-switcher__link style-switcher__link--blue"></a>
+		<a class="style-switcher__link style-switcher__link--violet"></a>
+		<a class="style-switcher__link style-switcher__link--green"></a> <br/>
+		<a class="style-switcher__link style-switcher__link--red-gradient"></a>
+		<a class="style-switcher__link style-switcher__link--blue-gradient"></a>
+		<a class="style-switcher__link style-switcher__link--violet-gradient"></a>
+		<a class="style-switcher__link style-switcher__link--green-gradient"></a>
+	</div>
+</div> -->
+<!--Switcher-->
+
+<!--Main menu-->
+<div class="menu">
+	<div class="container menu__wrapper">
+		<div class="row">
+			<div class="menu__logo col-4">
+				<a href="index.html">
+					<svg class="menu__logo-img" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+						<path data-name="Sigma symbol" class="svg-element"
+						      d="M237.418,8583.56a12.688,12.688,0,0,0,.419-3.37c-0.036-5.24-2.691-9.68-7.024-13.2h-3.878a20.819,20.819,0,0,1,4.478,13.01c0,4.56-2.456,10.2-6.413,11.4a16.779,16.779,0,0,1-2.236.51c-10.005,1.55-14.109-17.54-9.489-23.31,2.569-3.21,6.206-4.08,11.525-4.08h17.935A24.22,24.22,0,0,1,237.418,8583.56Zm-12.145-24.45c-8.571.02-12.338,0.98-16.061,4.84-6.267,6.49-6.462,20.69,4.754,27.72a24.092,24.092,0,1,1,27.3-32.57h-16v0.01Z"
+						      transform="translate(-195 -8544)"/>
+					</svg>
+					<p class="menu__logo-title">BillingFox</p>
+				</a>
+			</div>
+			<div class="col-4 d-t-none">
+				<!-- <nav class="menu__center-nav">
+					<ul>
+						<li>
+							<div class="menu__dropdown">
+								<a class="link link--gray menu__dropdown-btn">Home
+									<span><i class="mdi mdi-chevron-down"></i></span>
+								</a>
+								<div class="menu__dropdown-content">
+									<a class="link link--gray" href="index.html">Mobile App</a>
+									<a class="link link--gray" href="02_messanger.html">Messanger</a>
+									<a class="link link--gray link--gray-active" href="">Web App</a>
+									<a class="link link--gray" href="04_desktop.html">Desktop App</a>
+								</div>
+							</div>
+						</li>
+						<li><a href="05_features.html" class="link link--gray">Features</a></li>
+						<li><a href="06_pricing.html" class="link link--gray">Pricing</a></li>
+					</ul>
+				</nav> -->
+			</div>
+			<div class="col-4 col-t-8">
+				<nav class="menu__left-nav d-l-none">
+					<ul>
+						<li><a href="/account" class="site-btn site-btn--accent">Create API Key</a></li>
+						<!-- <li>
+							<div class="menu__dropdown d-t-none">
+								<a class="link link--gray menu__dropdown-btn">En
+									<span><i class="mdi mdi-chevron-down"></i></span>
+								</a>
+								<div class="menu__dropdown-content">
+									<a class="link link--gray link--gray-active" href="#">En</a>
+									<a class="link link--gray" href="#">Fr</a>
+									<a class="link link--gray" href="#">Ch</a>
+								</div>
+							</div>
+						</li> -->
+					</ul>
+				</nav>
+				<div class="d-none d-t-block">
+					<button type="button" class="menu__mobile-button">
+						<span><i class="mdi mdi-menu" aria-hidden="true"></i></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Main menu-->
+
+<!--Mobile menu-->
+<div class="mobile-menu d-none d-t-block">
+	<div class="container">
+		<div class="mobile-menu__logo">
+			<svg class="menu__logo-img" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+				<path data-name="Sigma symbol" class="svg-element"
+				      d="M237.418,8583.56a12.688,12.688,0,0,0,.419-3.37c-0.036-5.24-2.691-9.68-7.024-13.2h-3.878a20.819,20.819,0,0,1,4.478,13.01c0,4.56-2.456,10.2-6.413,11.4a16.779,16.779,0,0,1-2.236.51c-10.005,1.55-14.109-17.54-9.489-23.31,2.569-3.21,6.206-4.08,11.525-4.08h17.935A24.22,24.22,0,0,1,237.418,8583.56Zm-12.145-24.45c-8.571.02-12.338,0.98-16.061,4.84-6.267,6.49-6.462,20.69,4.754,27.72a24.092,24.092,0,1,1,27.3-32.57h-16v0.01Z"
+				      transform="translate(-195 -8544)"/>
+			</svg>
+		</div>
+		<button type="button" class="mobile-menu__close">
+			<span><i class="mdi mdi-close" aria-hidden="true"></i></span>
+		</button>
+		<nav class="mobile-menu__wrapper">
+			<ul class="mobile-menu__ul">
+				<li class="mobile-menu__li mobile-menu__li-collapse"><a class="link link--dark-gray">Home
+					<span><i class="mdi mdi-chevron-down"></i></span>
+				</a></li>
+				<li class="mobile-menu__ul--collapsed">
+					<ul class="mobile-menu__ul">
+						<li class="mobile-menu__li"><a class="link link--gray" href="index.html">Mobile App</a></li>
+						<li class="mobile-menu__li"><a class="link link--gray" href="02_messanger.html">Messanger</a></li>
+						<li class="mobile-menu__li"><a class="link link--gray link--gray-active" href="03_webapp.html">Web App</a>
+						</li>
+						<li class="mobile-menu__li"><a class="link link--gray" href="04_desktop.html">Desktop App</a></li>
+					</ul>
+				</li>
+				<li class="mobile-menu__li"><a href="05_features.html" class="link link--dark-gray">Features</a></li>
+				<li class="mobile-menu__li"><a href="06_pricing.html" class="link link--dark-gray">Pricing</a></li>
+				<li class="mobile-menu__li"><a href="10_get-app.html" class="site-btn site-btn--accent">Get the Sigma</a></li>
+				<li class="mobile-menu__li mobile-menu__li-collapse"><a class="link link--dark-gray">En
+					<span><i class="mdi mdi-chevron-down"></i></span></a></li>
+				<li class="mobile-menu__ul--collapsed">
+					<ul class="mobile-menu__ul">
+						<li class="mobile-menu__li"><a href="" class="link link--gray link--gray-active">En</a></li>
+						<li class="mobile-menu__li"><a href="" class="link link--gray">Fr</a></li>
+						<li class="mobile-menu__li"><a href="" class="link link--gray">Ch</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>
+<!--Mobile menu-->
+
+<!--Header-->
+<header class="header-home header-home--color">
+	<div class="container">
+		<div class="row header-home__webapp-img-wrap">
+			<img alt="" class="header-home__webapp-img" src="assets/img/img_bg_webapp.png">
+			<div class="col-12">
+				<h2 class="header-home__title">Usage Based Billing API Platform</h2>
+				<p class="header-home__description">An easy to use API for busy developers who want to enable customers to pay for only what they use.</p>
+				<div class="header-home__btns header-home__btns-webapp">
+					<a href="05_features.html" class="site-btn site-btn--accent header-home__btn">Create API Key</a>
+					<a href="10_get-app.html" class="site-btn site-btn--invert header-home__btn">Explore Docs</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!--Header-->
+
+<!--Trusted by-->
+<!-- <div class="section section--first">
+	<div class="container">
+		<div class="row logo">
+			<div class="col-10 col-offset-1 col-t-12">
+				<p>Used by over 1,000,000 people worldwide
+					<img alt="" class="logo__img-mini" src="assets/img/img_logo_blue_1.png">
+					<img alt="" class="logo__img-mini" src="assets/img/img_logo_blue_2.png">
+					<img alt="" class="logo__img-mini" src="assets/img/img_logo_blue_3.png">
+					<img alt="" class="logo__img-mini" src="assets/img/img_logo_blue_4.png">
+					<img alt="" class="logo__img-mini" src="assets/img/img_logo_blue_5.png">
+					<img alt="" class="logo__img-mini" src="assets/img/img_logo_blue_6.png">
+				</p>
+			</div>
+		</div>
+	</div>
+</div> -->
+<!--Trusted by-->
+
+<!--What is-->
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h3 class="section__title">What is BillingFox?</h3>
+				<p class="section__description">A powerful API that enables billing cycles in units, seconds, minutes or days.</p>
+			</div>
+		</div>
+		<div class="row about-app">
+			<div class="col-6 about-app__description">
+				<div class="about-app__description-content about-app__description-content--left">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+						<path class="svg-element"
+						      d="M496.649,3155.93a1.94,1.94,0,0,0-1.939,1.94v11.78a2.476,2.476,0,0,1-2.473,2.47H461.351a2.475,2.475,0,0,1-2.473-2.47v-30.89a2.475,2.475,0,0,1,2.473-2.47h11.781a1.94,1.94,0,0,0,0-3.88H461.351a6.359,6.359,0,0,0-6.351,6.35v30.89a6.359,6.359,0,0,0,6.351,6.35h30.886a6.359,6.359,0,0,0,6.351-6.35v-11.78A1.94,1.94,0,0,0,496.649,3155.93Zm5.783-18.54-8.824-8.82a1.935,1.935,0,0,0-2.743,0l-22.06,22.06a1.919,1.919,0,0,0-.568,1.37v8.82a1.94,1.94,0,0,0,1.939,1.94H479a1.948,1.948,0,0,0,1.371-.56l22.061-22.07A1.936,1.936,0,0,0,502.432,3137.39ZM478.2,3158.88h-6.082v-6.08l20.122-20.12,6.082,6.08Z"
+						      transform="translate(-455 -3128)"/>
+					</svg>
+					<h4 class="about-app__description-title">Ping</h4>
+					<p>Test your access token and get some basic details on your account. Pellentesque placerat eros ac finibus congue.
+						Integer consectetur, lorem nec accumsan commodo, sem mauris pharetra arcu, id viverra eros ipsum ac lorem.
+						Suspendisse potenti.</p>
+				</div>
+			</div>
+			<div class="col-6 about-app__img">
+				<div class="about-app__img-wrap">
+					<img alt="" src="assets/img/img_ui_1.png">
+				</div>
+			</div>
+		</div>
+		<div class="row about-app about-app--reverse">
+			<div class="col-6 about-app__description">
+				<div class="about-app__description-content">
+					<svg xmlns="http://www.w3.org/2000/svg" width="42" height="48" viewBox="0 0 42 48">
+						<path class="svg-element"
+						      d="M1019.32,3629.62a4.6,4.6,0,0,0-1.57-1.56h0l-32.688-19.41h-0.01a4.7,4.7,0,0,0-6.4,1.61,4.616,4.616,0,0,0-.653,2.36h0v38.76a4.649,4.649,0,0,0,4.671,4.62h0a4.637,4.637,0,0,0,2.381-.65h0.009l32.689-19.38v-0.01A4.578,4.578,0,0,0,1019.32,3629.62Zm-3.6,3.02-32.67,19.38a0.758,0.758,0,0,1-.91-0.12,0.715,0.715,0,0,1-.219-0.52v-38.76h0a0.735,0.735,0,0,1,.1-0.38,0.75,0.75,0,0,1,.459-0.34,0.721,0.721,0,0,1,.565.08l32.67,19.4a0.667,0.667,0,0,1,.25.25A0.725,0.725,0,0,1,1015.72,3632.64Z"
+						      transform="translate(-978 -3608)"/>
+					</svg>
+					<h4 class="about-app__description-title">Identify</h4>
+					<p>Create users within the BillingFox ecosystem whose credits you can then begin to spend. lorem nec accumsan commodo, sem mauris pharetra arcu, id viverra eros ipsum ac lorem.
+					Suspendisse potenti.</p>
+					<!-- <a href="10_get-app.html" class="site-btn site-btn--accent about-app__btn">Start Using for Free</a> -->
+				</div>
+			</div>
+			<div class="col-6 about-app__img about-app__img--left">
+				<div class="about-app__img-wrap">
+					<img alt="" src="assets/img/img_ui_2.png">
+				</div>
+			</div>
+		</div>
+		<div class="row about-app">
+			<div class="col-6 about-app__description">
+				<div class="about-app__description-content about-app__description-content--left">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+						<path class="svg-element"
+						      d="M495.623,4102.78a1.367,1.367,0,0,1,1.246-.83h0.181a5.95,5.95,0,1,0,0-11.9h-0.333a1.379,1.379,0,0,1-1.136-.61,1.979,1.979,0,0,0-.126-0.4,1.372,1.372,0,0,1,.268-1.51l0.106-.1s0.006-.01.009-0.01a5.952,5.952,0,0,0,0-8.41s-0.006-.01-0.009-0.01a5.922,5.922,0,0,0-4.2-1.74h0a5.885,5.885,0,0,0-4.2,1.75l-0.111.11a1.354,1.354,0,0,1-1.506.26H485.78a1.376,1.376,0,0,1-.83-1.25v-0.18a5.95,5.95,0,0,0-11.9,0v0.33a1.368,1.368,0,0,1-.612,1.14,2.688,2.688,0,0,0-.4.12,1.354,1.354,0,0,1-1.506-.26l-0.115-.12a5.918,5.918,0,0,0-4.2-1.74h0a5.951,5.951,0,0,0-4.206,10.16l0.112,0.11a1.375,1.375,0,0,1,.268,1.51c-0.017.04-.032,0.08-0.046,0.11a1.36,1.36,0,0,1-1.236.9H460.95a5.95,5.95,0,0,0,0,11.9h0.333a1.368,1.368,0,0,1,1.254.83,0.167,0.167,0,0,1,.008.02,1.354,1.354,0,0,1-.268,1.5l-0.111.12h-0.008a5.95,5.95,0,0,0,.009,8.41c0,0.01.005,0.01,0.008,0.01a5.95,5.95,0,0,0,8.409-.01l0.111-.11a1.373,1.373,0,0,1,1.5-.27,0.542,0.542,0,0,0,.114.05,1.362,1.362,0,0,1,.9,1.24v0.15a5.95,5.95,0,1,0,11.9,0v-0.33a1.38,1.38,0,0,1,.831-1.26,0.019,0.019,0,0,0,.019-0.01,1.373,1.373,0,0,1,1.5.27l0.115,0.12a5.922,5.922,0,0,0,4.205,1.74h0a5.953,5.953,0,0,0,4.205-10.16l-0.111-.12a1.356,1.356,0,0,1-.268-1.5C495.618,4102.79,495.62,4102.79,495.623,4102.78Zm-2.506,4.24c0,0.01.01,0.01,0.015,0.02l0.121,0.12a2.076,2.076,0,0,1-1.467,3.54h0a2.077,2.077,0,0,1-1.467-.61l-0.12-.12s-0.01-.01-0.016-0.01a5.271,5.271,0,0,0-8.95,3.75v0.34a2.072,2.072,0,0,1-4.144,0v-0.18c0-.02,0-0.03,0-0.05a5.406,5.406,0,0,0-9.11-3.7s-0.01.01-.015,0.01l-0.121.12a2.071,2.071,0,0,1-2.931,0H464.9a2.076,2.076,0,0,1,0-2.93s0.005,0,.007-0.01l0.116-.11c0-.01.01-0.01,0.015-0.02a5.274,5.274,0,0,0-3.752-8.95H460.95a2.07,2.07,0,1,1,0-4.14h0.226a5.41,5.41,0,0,0,3.707-9.11c0-.01-0.01-0.01-0.015-0.02l-0.121-.12a2.076,2.076,0,0,1,1.466-3.54h0a2.032,2.032,0,0,1,1.466.61l0.121,0.12s0.01,0.01.015,0.01a5.2,5.2,0,0,0,5.413,1.2,1.87,1.87,0,0,0,.517-0.14,5.244,5.244,0,0,0,3.181-4.81v-0.34a2.072,2.072,0,0,1,4.144,0v0.19a5.271,5.271,0,0,0,8.95,3.74s0.01-.01.016-0.01l0.121-.12a2.024,2.024,0,0,1,1.465-.61h0a2.052,2.052,0,0,1,1.461.6s0,0.01.006,0.01a2.049,2.049,0,0,1,.608,1.46,2.079,2.079,0,0,1-.6,1.47h0l-0.121.12c0,0.01-.01.01-0.015,0.02a5.215,5.215,0,0,0-1.2,5.41,1.986,1.986,0,0,0,.141.52,5.257,5.257,0,0,0,4.811,3.18h0.341a2.07,2.07,0,1,1,0,4.14h-0.188A5.274,5.274,0,0,0,493.117,4107.02ZM479,4088.04a7.96,7.96,0,1,0,7.955,7.96A7.966,7.966,0,0,0,479,4088.04Zm0,12.04a4.08,4.08,0,1,1,4.077-4.08A4.083,4.083,0,0,1,479,4100.08Z"
+						      transform="translate(-455 -4072)"/>
+					</svg>
+					<h4 class="about-app__description-title">Spend</h4>
+					<p>Spend a user's account credit balance. Pellentesque placerat eros ac finibus congue.
+						Integer consectetur, lorem nec accumsan commodo, sem mauris pharetra arcu, id viverra eros ipsum ac lorem.
+						Suspendisse potenti. Vestibulum aliquam blandit scelerisque. Aliquam hendrerit vestibulum lorem non
+						placerat. Etiam at diam id erat tincidunt ullamcorper.</p>
+				</div>
+			</div>
+			<div class="col-6 about-app__img">
+				<div class="about-app__img-wrap">
+					<img alt="" src="assets/img/img_ui_3.png">
+				</div>
+			</div>
+		</div>
+		<div class="row about-app about-app--reverse">
+			<div class="col-6 about-app__description">
+				<div class="about-app__description-content">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+						<path class="svg-element"
+						      d="M1016.16,4592H981.841a6.849,6.849,0,0,0-6.841,6.84v39.22a1.937,1.937,0,0,0,3.31,1.37l9.237-9.24h28.613a6.843,6.843,0,0,0,6.84-6.84v-24.51A6.85,6.85,0,0,0,1016.16,4592Zm2.96,31.35a2.968,2.968,0,0,1-2.96,2.97H986.744a1.946,1.946,0,0,0-1.371.56l-6.5,6.5v-34.54a2.966,2.966,0,0,1,2.963-2.96h34.319a2.966,2.966,0,0,1,2.96,2.96v24.51Z"
+						      transform="translate(-975 -4592)"/>
+					</svg>
+					<h4 class="about-app__description-title">Recharge</h4>
+					<p>Top up a user's account with a pre-determined amount of credits. Pellentesque placerat eros ac finibus congue.
+						Integer consectetur, lorem nec accumsan commodo, sem mauris pharetra arcu, id viverra eros ipsum ac
+						lorem. Suspendisse potenti.</p>
+				</div>
+			</div>
+			<div class="col-6 about-app__img about-app__img--left">
+				<div class="about-app__img-wrap">
+					<img alt="" src="assets/img/img_ui_4.png">
+				</div>
+			</div>
+		</div>
+		<hr>
+	</div>
+</section>
+<!--What is-->
+
+<!--Questions-->
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h3 class="section__title">Got Any Questions?</h3>
+			</div>
+		</div>
+		<div class="row questions questions--without-cards">
+			<div class="col-6">
+				<div class="questions__question">
+					<img alt="" src="assets/img/img_question_1.png" class="questions__icon">
+					<h4 class="questions__title">Who is Sigma for?</h4>
+					<p class="questions__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Pellentesque placerat eros ac finibus congue. Integer consectetur, lorem nec accumsan
+						commodo, sem mauris pharetra arcu, id viverra eros ipsum ac lorem. Suspendisse potenti.</p>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="questions__question">
+					<img alt="" src="assets/img/img_question_2.png" class="questions__icon">
+					<h4 class="questions__title">Who is Sigma for?</h4>
+					<p class="questions__answer">Sed tristique commodo bibendum. Orci varius natoque penatibus et
+						magnis dis parturient montes, nascetur ridiculus mus. Cras molestie arcu in mauris euismod,
+						quis faucibus urna aliquam.</p>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="questions__question">
+					<img alt="" src="assets/img/img_question_3.png" class="questions__icon">
+					<h4 class="questions__title">In which countries is Sigma available?</h4>
+					<p class="questions__answer">Donec non vestibulum eros, auctor elementum felis. Mauris arcu
+						lectus, vestibulum in aliquet a, interdum in enim. Orci varius natoque penatibus et
+						magnis dis parturient montes, nascetur ridiculus mus. Aenean facilisis enim dui, ut
+						hendrerit ligula lobortis sit amet. Nunc pulvinar risus id lectus posuere, at rutrum dui
+						commodo.</p>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="questions__question">
+					<img alt="" src="assets/img/img_question_4.png" class="questions__icon">
+					<h4 class="questions__title">What forms of payment do you accept?</h4>
+					<p class="questions__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+						a massa nisl. Praesent tristique est vitae tortor maximus sodales. Maecenas venenatis
+						eleifend felis imperdiet sollicitudin. Proin hendrerit commodo nisl. Interdum et malesuada
+						fames ac ante ipsum primis in faucibus. </p>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="questions__question">
+					<img alt="" src="assets/img/img_question_5.png" class="questions__icon">
+					<h4 class="questions__title">What features does the trial include?</h4>
+					<p class="questions__answer">Sed tristique commodo bibendum. Orci varius natoque penatibus et
+						magnis dis parturient montes, nascetur ridiculus mus. Cras molestie arcu in mauris euismod,
+						quis faucibus urna aliquam.</p>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="questions__question">
+					<img alt="" src="assets/img/img_question_6.png" class="questions__icon">
+					<h4 class="questions__title">Can I mix and match different add-ons?</h4>
+					<p class="questions__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Pellentesque placerat eros ac finibus congue. Integer consectetur, lorem nec accumsan
+						commodo, sem mauris pharetra arcu, id viverra eros ipsum ac lorem. Suspendisse potenti.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="site-btn--center">
+					<!-- <a class="site-btn site-btn--light" href="08_faq.html">Read more</a> -->
+				</div>
+			</div>
+		</div>
+		<hr>
+	</div>
+</section>
+<!--Questions-->
+
+<!--Download-->
+<section class="section section--last">
+	<div class="container download">
+		<div class="row">
+			<div class="col-12">
+				<h3 class="download__title">Sign Up Today</h3>
+				<h4>with the easiest metered billing API on the market.</h4>
+			</div>
+		</div>
+		<div class="row download__btns">
+			<div class="col-6">
+				<a href="10_get-app.html" class="site-btn site-btn--accent site-btn--right download__btn-first">
+					Create API Key</a>
+			</div>
+			<div class="col-6">
+				<a href="05_features.html" class="site-btn site-btn--light site-btn--left">
+					Explore Docs</a>
+			</div>
+		</div>
+	</div>
+	<img alt="" class="section__img" src="assets/img/img_backgroud_footer.png">
+</section>
+<!--Download-->
+
+<!--Footer menu-->
+<div class="container footer-menu">
+	<div class="row">
+		<div class="col-12">
+			<a href="index.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+					<path data-name="Sigma symbol" class="svg-element"
+					      d="M237.418,8583.56a12.688,12.688,0,0,0,.419-3.37c-0.036-5.24-2.691-9.68-7.024-13.2h-3.878a20.819,20.819,0,0,1,4.478,13.01c0,4.56-2.456,10.2-6.413,11.4a16.779,16.779,0,0,1-2.236.51c-10.005,1.55-14.109-17.54-9.489-23.31,2.569-3.21,6.206-4.08,11.525-4.08h17.935A24.22,24.22,0,0,1,237.418,8583.56Zm-12.145-24.45c-8.571.02-12.338,0.98-16.061,4.84-6.267,6.49-6.462,20.69,4.754,27.72a24.092,24.092,0,1,1,27.3-32.57h-16v0.01Z"
+					      transform="translate(-195 -8544)"/>
+				</svg>
+			</a>
+			<nav class="footer-menu__nav">
+				<ul>
+					<li><a class="link link--gray" href="07_about.html">About</a></li>
+					<li><a class="link link--gray" href="08_faq.html">Blog</a></li>
+					<li><a class="link link--gray" href="09_privacy.html">Privacy</a></li>
+				</ul>
+			</nav>
+			<p class="footer-menu__social">
+				<a class="link link--gray" href="">
+					<i class="mdi mdi-twitter" aria-hidden="true"></i>
+				</a>
+				<!-- <a class="link link--gray" href="">
+					<i class="mdi mdi-facebook" aria-hidden="true"></i>
+				</a>
+				<a class="link link--gray" href="">
+					<i class="mdi mdi-linkedin" aria-hidden="true"></i>
+				</a> -->
+			</p>
+		</div>
+	</div>
+</div>
+<!--Footer menu-->
+
+<hr>
+
+<!--Footer-->
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<p>© 2018 BillingFox LLC</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Footer-->
+
+<script src="assets/js/jquery-2.2.4.min.js"></script>
+<script src="assets/js/jquery.waypoints.js"></script>
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/mobile-menu.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/pricing.js"></script>
+<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/dragscrollable.min.js"></script>
+<script src="assets/js/device.js"></script>
+<script src="assets/js/carousel.js"></script>
+<!-- <script src="assets/js/style-switcher.js"></script>
+<script src="assets/js/form.js"></script> -->
+</body>
+</html>
