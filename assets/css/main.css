@@ -985,6 +985,8 @@ h4 {
     width: 750px; }
   .header-home .header-home__description--about {
     margin-bottom: 400px; }
+  .header-home .header-home__description--docs {
+      margin-bottom: 100px; }
   .header-home .header-home__img {
     max-width: 490px;
     width: 100%; }
@@ -1054,6 +1056,9 @@ h4 {
       width: 700px; }
     .header-home .header-home__description--about {
       margin-bottom: 300px;
+      max-width: 700px; }
+    .header-home .header-home__description--docs {
+      margin-bottom: 80px;
       max-width: 700px; }
     .header-home.header-home--desktop {
       margin-bottom: 108px; } }
