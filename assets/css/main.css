@@ -965,7 +965,7 @@ h4 {
     -o-transition: all 0.3s;
     transition: all 0.3s; }
   .header-home .header-home__title--accent {
-    color: #ff5c72; }
+    color: #04B6CE; }
   .header-home .header-home__title--features {
     width: 750px;
     margin-bottom: 450px; }
@@ -984,9 +984,9 @@ h4 {
   .header-home .header-home__description--big {
     width: 750px; }
   .header-home .header-home__description--about {
-    margin-bottom: 400px; }
+    margin-bottom: 100px; }
   .header-home .header-home__description--docs {
-      margin-bottom: 100px; }
+    margin-bottom: 100px; }
   .header-home .header-home__img {
     max-width: 490px;
     width: 100%; }
@@ -2305,6 +2305,7 @@ h4 {
   margin-bottom: 76px; }
 
 .privacy .privacy__chapter-title {
+  margin-top: 45px;
   margin-bottom: 56px; }
 
 .privacy .privacy__chapter-subtitle {

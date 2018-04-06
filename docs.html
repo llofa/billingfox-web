@@ -3,36 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="assets/css/main.css" id="main_style">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Main CSS -->
+    <!-- <link rel="stylesheet" href="assets/css/main.css" id="main_style"> -->
+    <!-- Optional Color Options -->
+    <link rel="stylesheet" href="assets/css/blue-gradient.css" id="main_style">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,800" rel="stylesheet">
 	<link href="https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
-	<title>Sigma</title>
+	<link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+	<title>API Documentation - BillingFox</title>
 </head>
 <body>
-
-<!--Switcher-->
-<div class="style-switcher">
-	<span class="style-switcher__control"></span>
-	<div class="style-switcher__list">
-		<a class="style-switcher__link style-switcher__link--red active"></a>
-		<a class="style-switcher__link style-switcher__link--blue"></a>
-		<a class="style-switcher__link style-switcher__link--violet"></a>
-		<a class="style-switcher__link style-switcher__link--green"></a> <br/>
-		<a class="style-switcher__link style-switcher__link--red-gradient"></a>
-		<a class="style-switcher__link style-switcher__link--blue-gradient"></a>
-		<a class="style-switcher__link style-switcher__link--violet-gradient"></a>
-		<a class="style-switcher__link style-switcher__link--green-gradient"></a>
-	</div>
-</div>
-<!--Switcher-->
 
 <!--Main menu-->
 <div class="menu">
 	<div class="container menu__wrapper">
 		<div class="row">
 			<div class="menu__logo col-4">
-				<a href="index.html">
+				<a href="/">
 					<svg class="menu__logo-img" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
 						<path data-name="Sigma symbol" class="svg-element"
 						      d="M237.418,8583.56a12.688,12.688,0,0,0,.419-3.37c-0.036-5.24-2.691-9.68-7.024-13.2h-3.878a20.819,20.819,0,0,1,4.478,13.01c0,4.56-2.456,10.2-6.413,11.4a16.779,16.779,0,0,1-2.236.51c-10.005,1.55-14.109-17.54-9.489-23.31,2.569-3.21,6.206-4.08,11.525-4.08h17.935A24.22,24.22,0,0,1,237.418,8583.56Zm-12.145-24.45c-8.571.02-12.338,0.98-16.061,4.84-6.267,6.49-6.462,20.69,4.754,27.72a24.092,24.092,0,1,1,27.3-32.57h-16v0.01Z"
@@ -57,9 +45,9 @@
 								</div>
 							</div> -->
 						</li>
-						<li><a href="05_features.html" class="link link--gray">Blog</a></li>
-						<li><a href="06_pricing.html" class="link link--gray">FAQ</a></li>
-						<li><a href="06_pricing.html" class="link link--gray">Guides</a></li>
+						<!-- <li><a href="05_features.html" class="link link--gray">Blog</a></li> -->
+						<li><a href="/docs" class="link link--gray">API Documentation</a></li>
+						<li><a href="/guides" class="link link--gray">Developer Guides</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -107,20 +95,23 @@
 		</button>
 		<nav class="mobile-menu__wrapper">
 			<ul class="mobile-menu__ul">
-				<li class="mobile-menu__li mobile-menu__li-collapse"><a class="link link--dark-gray">Home
+				<!-- <li class="mobile-menu__li mobile-menu__li-collapse"><a class="link link--dark-gray">Home
 					<span><i class="mdi mdi-chevron-down"></i></span>
 				</a></li>
 				<li class="mobile-menu__ul--collapsed">
 					<ul class="mobile-menu__ul">
 						<li class="mobile-menu__li"><a class="link link--gray" href="index.html">Mobile App</a></li>
 						<li class="mobile-menu__li"><a class="link link--gray" href="02_messanger.html">Messanger</a></li>
-						<li class="mobile-menu__li"><a class="link link--gray" href="03_webapp.html">Web App</a></li>
+						<li class="mobile-menu__li"><a class="link link--gray link--gray-active" href="03_webapp.html">Web App</a>
+						</li>
 						<li class="mobile-menu__li"><a class="link link--gray" href="04_desktop.html">Desktop App</a></li>
 					</ul>
-				</li>
-				<li class="mobile-menu__li"><a href="05_features.html" class="link link--dark-gray">Features</a></li>
-				<li class="mobile-menu__li"><a href="06_pricing.html" class="link link--dark-gray">Pricing</a></li>
-				<li class="mobile-menu__li"><a href="10_get-app.html" class="site-btn site-btn--accent">Get the Sigma</a></li>
+				</li> -->
+				<li class="mobile-menu__li"><a href="/about" class="link link--dark-gray">About</a></li>
+				<li class="mobile-menu__li"><a href="/contact" class="link link--dark-gray">Contact</a></li>
+				<li class="mobile-menu__li"><a href="/docs" class="link link--dark-gray">Docs</a></li>
+				<li class="mobile-menu__li"><a href="/guides" class="link link--dark-gray">Guides</a></li>
+				<li class="mobile-menu__li"><a href="#" class="site-btn site-btn--accent">Create API Key</a></li>
 				<li class="mobile-menu__li mobile-menu__li-collapse"><a class="link link--dark-gray">En
 					<span><i class="mdi mdi-chevron-down"></i></span></a></li>
 				<li class="mobile-menu__ul--collapsed">
@@ -136,15 +127,15 @@
 </div>
 <!--Mobile menu-->
 
-<!--Header-->
+    <!--Header-->
 <header class="header-home header-home--color">
 	<div class="background background--wave">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="header-home__title">API Documentation</h2>
-					<p class="header-home__description header-home__description--big header-home__description--docs">
-						Thank you for your interest in Sigma Technologies, Inc. We welcome you to our Website at the-sigma.com,
+					<h2 class="header-home__title--accent">API Documentation</h2>
+					<p class="header-home__description header-home__description--big header-home__description--about">
+						Thank you for your interest in BillingFox. We welcome you to our Website at billingfox.com,
 						as well as all related web sites, downloadable software, mobile applications
 						(including tablet applications), and products and services provided by us.</p>
 				</div>
@@ -153,7 +144,6 @@
 	</div>
 </header>
 <!--Header-->
-
 <!--Privacy-->
 <section class="section">
 	<div class="container">
@@ -161,18 +151,137 @@
 			<div class="col-9 col-t-12">
 				<div class="privacy__content">
 					<div id="chapter1" class="privacy__chapter chapter">
-						<h3 class="privacy__chapter-title">Sigma Technologies, Inc.</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget euismod erat, sit amet vulputate
-							enim. Etiam enim tellus, maximus vel augue sed, pharetra hendrerit orci. Vivamus sed massa in nibh
-							imperdiet mattis quis sed augue. Pellentesque erat metus, vestibulum nec nisl pharetra, laoreet euismod
-							mauris. Aenean quis nulla lacus. Cras tristique, est non posuere venenatis, lectus diam ultrices turpis,
-							non blandit lacus purus id ante. Morbi vitae sollicitudin neque. Praesent finibus velit ac augue consequat
-							sollicitudin. Nunc vitae nunc in ex vehicula finibus rutrum id nisi. Aliquam vel egestas tellus.
-							Vestibulum quis purus sagittis, fermentum leo vitae, bibendum mauris. Nulla facilisi. Phasellus eu
-							aliquam leo.</p>
+						<h3 class="privacy__chapter-title">Getting Started</h3>
+						<p>​​Implement our API by setting up actions within your service and then assigning worth to those actions via spend​ calls to BillingFox.</p>
+						<p>Open this page, watch that video, call the other API. Whatever. Just correlate those actions to spending a user's account credits.</p> 
+						<em>2 credits here, 10 credits there, 0.073 credits everywhere. You decide.</em>
+						<p>When a user's balance starts getting low and hits your alert level we'll send them an email invoice to refill their account. 
+							Once they fill out that invoice we'll credit their balance, subtract the fees and pass on the rest to you.</p>
+						<p>​​As a concrete example, if a user were to fill out a $25 invoice</p>
+						<ul class="privacy__chapter-list">
+							<li>Stripe would take out `2.9% + $0.3​` = $1.03</li>
+							<li>BillingFox would take out '5%'​ = $1.25</li>
+							<li>The user would receive 2,500 credits</li>
+							<li>Leaving you with $22.72</li>
+						</ul>
+						<h4>How does it work?</h4>
+						<p>BillingFox operates on three core services. Stellar, Stripe and the BillingFox API.</p>
+						<p class="privacy__chapter-description--bold privacy__chapter-list-title">Stellar - acts as the financial underlayer for the platform.</p> <p>Providing a tokenization engine much like Bitcoin or Ethereum.</p>
+						<p>Within their network we create and maintain a network of accounts which give and receive a token unique to BillingFox. 
+						Stellar acts as the financial ledger keeping track of who has what and how much.</p>
+						<p class="privacy__chapter-description--bold privacy__chapter-list-title">Stripe - acts as the currency platform</p> <p>Allowing BillingFox to move from tokens, cryptocurrencies and computers to cold hard cash in your bank account.</p>
+						<p>The Stripe Connect product is a top notch tool allowing BillingFox to safely, securely and in a controlled, maintained environment move money from your users to you. 
+						All without you ever having to really do much of anything beyond creating an initial connection.</p>
+						<p class="privacy__chapter-description--bold privacy__chapter-list-title">BillingFox API - is the last piece of the puzzle</p> <p>While it might sound tricky or feel like black magic at times. 
+						It’s actually just simple, smart and straightforward. You give us a user and then begin spending their credit balance.</p>
+						<h4>What’s the ratio of $$ to user credit?</h4>
+						<p>Simple. If a user clears a $10 invoice we’ll credit them 1,000 credits. `1 credit = 1¢` Use this information to decide how much you want to spend per call when it comes time to make those calls. 
+						This is also obviously helpful for deciding on your account settings page what to set the initial credit and alert level at.</p>
+						<h4>What does BillingFox cost?</h4>
+						<p>BillingFox has a fixed fee of `5%` . However this is added on top of Stripe’s fee of `2.9% + 30¢` per transaction. 
+						So for example if a user where to clear that $10 invoice, Stripe would take 59¢, BillingFox would take 50¢, leaving you with $8.91.</p>
 					</div>
 					<div id="chapter2" class="privacy__chapter chapter">
-						<h3 class="privacy__chapter-title">Intellectual Property</h3>
+						<h3 class="privacy__chapter-title">Authentication</h3>
+						<p>Once you've created and signed into your BillingFox account you'll be presented with a screen containing your API key.</p>
+						<img src="https://i.imgur.com/F4absFE.png" />
+						<p>You'll simply need to include that token as an `Authorization` header with the `Bearer` prefix.</p>
+						<img src="https://i.imgur.com/jQbbdg1.png" />
+						<p>Once you've got that set you're ready to run with the BillingFox API!</p>
+					</div>
+					<div id="chapter3" class="privacy__chapter chapter">
+						<h3 class="privacy__chapter-title">Errors</h3>
+						<p>All errors are in the format:</p>
+						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">400</span><span class="w">
+	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized. Access token is invalid"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+							</span></pre></td></tr></tbody></table></code></pre></figure>
+							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">402</span><span class="w">
+	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Insufficient available balance to spend 5 credits"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"process"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+							</span></pre></td></tr></tbody></table></code></pre></figure>
+					</div>
+					<div id="chapter4" class="privacy__chapter chapter">
+						<h3 class="privacy__chapter-title">Networks</h3>
+						<p>The BillingFox API has a concept of live and test networks.</p>
+						<p>For all testing you should be hitting the `test.billingfox.com`</p>
+						<p>Once you’re ready for production you should be using `live.billingfox.com`</p>
+					</div>
+					<div id="chapter5" class="privacy__chapter chapter">
+						<h3 class="privacy__chapter-title">Ping</h3>
+						<p>​​Test your access token and get some basic details on your account.</p>
+
+							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="err">GET</span><span class="w"> </span><span class="err">\ping</span><span class="w">
+							</span></pre></td></tr></tbody></table></code></pre></figure>
+
+							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="err">curl</span><span class="w"> </span><span class="err">--request</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">\</span><span class="w">
+</span><span class="err">​​</span><span class="w">  </span><span class="err">--url</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//test.billingfox.com/api/ping</span><span class="w"> </span><span class="err">\</span><span class="w">
+</span><span class="err">​​</span><span class="w">  </span><span class="err">--header</span><span class="w"> </span><span class="err">'accept</span><span class="p">:</span><span class="w"> </span><span class="err">application/json'</span><span class="w"> </span><span class="err">\</span><span class="w">
+</span><span class="err">​​</span><span class="w">  </span><span class="err">--header</span><span class="w"> </span><span class="err">'authorization</span><span class="p">:</span><span class="w"> </span><span class="err">Bearer</span><span class="w"> </span><span class="err">YOUR</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">KEY</span><span class="w"> </span><span class="err">HERE'</span><span class="w">
+							</span></pre></td></tr></tbody></table></code></pre></figure>
+
+							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="err">​​</span><span class="p">{</span><span class="err">//</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">Success</span><span class="w">
+</span><span class="err">​​</span><span class="w">  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authorized. Token is valid"</span><span class="p">,</span><span class="w">
+</span><span class="err">​​</span><span class="w">  </span><span class="s2">"dev"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="err">​​</span><span class="w">    </span><span class="s2">"referral"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ebCX4utspAw"</span><span class="p">,</span><span class="w">
+</span><span class="err">​​</span><span class="w">    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hey@billingfox.com"</span><span class="p">,</span><span class="w">
+</span><span class="err">​​</span><span class="w">    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16T21:26:03.693Z"</span><span class="w">
+</span><span class="err">​​</span><span class="w">  </span><span class="p">},</span><span class="w">
+</span><span class="err">​​</span><span class="w">  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="err">​​</span><span class="p">}</span><span class="w">
+							</span></pre></td></tr></tbody></table></code></pre></figure>
+
+							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="err">​​</span><span class="p">{</span><span class="err">//</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="err">Error</span><span class="w">
+</span><span class="err">​​</span><span class="w">  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized. Access token is invalid"</span><span class="p">,</span><span class="w">
+</span><span class="err">​​</span><span class="w">  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="w">
+</span><span class="err">​​</span><span class="p">}</span><span class="w">
+							</span></pre></td></tr></tbody></table></code></pre></figure>
+
+					</div>
+					<div id="chapter6" class="privacy__chapter chapter">
+						<h3 class="privacy__chapter-title">Identify</h3>
+						<p>​​Create users within the BillingFox ecosystem whose credits you can then begin to spend.</p>
+						<p>Donec mattis ante et dapibus sodales. Suspendisse eros ipsum, pretium a dui sit amet, tristique semper
+							dolor. Vestibulum dignissim consequat dolor nec semper. Pellentesque iaculis gravida metus vel semper.
+							Etiam at placerat nunc. Proin id eros nec augue dignissim volutpat vitae a risus. Duis lorem neque,
+							sodales in turpis ac, finibus congue leo.</p>
+					</div>
+					<div id="chapter7" class="privacy__chapter chapter">
+						<h3 class="privacy__chapter-title">Spend</h3>
 						<p>Vivamus feugiat augue eu ante ullamcorper facilisis. In consequat urna at sapien auctor, ac fermentum
 							velit pretium. Quisque eu turpis tempus, posuere massa at, vestibulum neque. Duis ac diam dictum,
 							porttitor diam eu, fermentum nulla. Nunc eu elit faucibus, efficitur risus in, efficitur ante. Proin
@@ -187,45 +296,21 @@
 							Etiam at placerat nunc. Proin id eros nec augue dignissim volutpat vitae a risus. Duis lorem neque,
 							sodales in turpis ac, finibus congue leo.</p>
 					</div>
-					<div id="chapter3" class="privacy__chapter chapter">
-						<h3 class="privacy__chapter-title">Site Security</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget euismod erat, sit amet vulputate
-							enim. Etiam enim tellus, maximus vel augue sed, pharetra hendrerit orci. Vivamus sed massa in nibh
-							imperdiet mattis quis sed augue. Pellentesque erat metus, vestibulum nec nisl pharetra, laoreet euismod
-							mauris. Aenean quis nulla lacus. Cras tristique, est non posuere venenatis, lectus diam ultrices turpis,
-							non blandit lacus purus id ante. Morbi vitae sollicitudin neque. Praesent finibus velit ac augue consequat
-							sollicitudin. Nunc vitae nunc in ex vehicula finibus rutrum id nisi. Aliquam vel egestas tellus.
-							Vestibulum
-							quis purus sagittis, fermentum leo vitae, bibendum mauris. Nulla facilisi. Phasellus eu aliquam leo.
-						</p>
-						<h4 class="privacy__chapter-subtitle">Links to Other Websites and Services</h4>
+					<div id="chapter8" class="privacy__chapter chapter">
+						<h3 class="privacy__chapter-title">Recharge</h3>
 						<p>Vivamus feugiat augue eu ante ullamcorper facilisis. In consequat urna at sapien auctor, ac fermentum
 							velit pretium. Quisque eu turpis tempus, posuere massa at, vestibulum neque. Duis ac diam dictum,
-							porttitor diam eu, fermentum nulla.
-						</p>
-						<h4 class="privacy__chapter-subtitle">How We Use Your Information</h4>
-						<p>Vivamus feugiat augue eu ante ullamcorper facilisis. In consequat urna at sapien auctor, ac fermentum
-							velit pretium. Quisque eu turpis tempus, posuere massa at, vestibulum neque. Duis ac diam dictum,
-							porttitor diam eu, fermentum nulla.
-						</p>
-						<p class="privacy__chapter-description--bold">Sigma may use your information, including Personal
-							Information in order to perform our Services including for the following activities:</p>
-						<p class="privacy__chapter-description--bold privacy__chapter-list-title">Identity Verification and
-							Security</p>
-						<ul class="privacy__chapter-list">
-							<li>Confirm that you are over the age of 18..</li>
-							<li>Verify your identity and safeguard against potential fraud.</li>
-							<li>Protect data from unauthorized parties and comply with legal requirements.</li>
-						</ul>
-						<p class="privacy__chapter-description--bold privacy__chapter-list-title">Underwriting and Funding Loan</p>
-						<ul class="privacy__chapter-list">
-							<li>Confirm that you are over the age of 18..</li>
-							<li>Verify your identity and safeguard against potential fraud.</li>
-							<li>Protect data from unauthorized parties and comply with legal requirements.</li>
-						</ul>
-						<p>Vivamus feugiat augue eu ante ullamcorper facilisis. In consequat urna at sapien auctor, ac fermentum
-							velit pretium. Quisque eu turpis tempus, posuere massa at, vestibulum neque. Duis ac diam dictum,
-							porttitor diam eu, fermentum nulla.</p>
+							porttitor diam eu, fermentum nulla. Nunc eu elit faucibus, efficitur risus in, efficitur ante. Proin
+							id ex orci. Aenean semper, orci sit amet maximus commodo, neque erat iaculis ex, eget posuere nisl nisi
+							at orci. Donec ac molestie nunc, sit amet aliquet nisi. Morbi a efficitur nisi. Quisque rhoncus nisl id
+							magna sodales, vitae tristique quam consequat. Integer vel ex sed sapien sodales gravida. Pellentesque
+							habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec vulputate quam
+							in risus fermentum, vel hendrerit ligula ullamcorper. Suspendisse feugiat nulla id nisl tincidunt
+							condimentum. Nullam viverra dui ligula, vitae vehicula nunc rhoncus eget.</p>
+						<p>Donec mattis ante et dapibus sodales. Suspendisse eros ipsum, pretium a dui sit amet, tristique semper
+							dolor. Vestibulum dignissim consequat dolor nec semper. Pellentesque iaculis gravida metus vel semper.
+							Etiam at placerat nunc. Proin id eros nec augue dignissim volutpat vitae a risus. Duis lorem neque,
+							sodales in turpis ac, finibus congue leo.</p>
 					</div>
 				</div>
 			</div>
@@ -233,10 +318,13 @@
 				<nav class="sidebar">
 					<ul class="sidebar__list">
 						<li class="sidebar__item active"><a href="#chapter1">Getting Started</a></li>
-						<li class="sidebar__item"><a href="#chapter2">Ping</a></li>
-						<li class="sidebar__item"><a href="#chapter3">Identify</a></li>
-						<li class="sidebar__item"><a href="#chapter4">Spend</a></li>
-						<li class="sidebar__item"><a href="#chapter5">Recharge</a></li>
+						<li class="sidebar__item"><a href="#chapter2">Authentication</a></li>
+						<li class="sidebar__item"><a href="#chapter3">Errors</a></li>
+						<li class="sidebar__item"><a href="#chapter4">Networks</a></li>
+						<li class="sidebar__item"><a href="#chapter5">Ping</a></li>
+						<li class="sidebar__item"><a href="#chapter6">Identify</a></li>
+						<li class="sidebar__item"><a href="#chapter7">Spend</a></li>
+						<li class="sidebar__item"><a href="#chapter8">Recharge</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -262,13 +350,13 @@
 			</a>
 			<nav class="footer-menu__nav">
 				<ul>
-					<li><a class="link link--gray" href="about.html">About</a></li>
-					<li><a class="link link--gray" href="contact.html">Contact</a></li>
-					<li><a class="link link--gray link--gray-active" href="#">Privacy</a></li>
+					<!-- <li><a class="link link--gray" href="about.html">About</a></li> -->
+					<li><a class="link link--gray" href="#">Disclaimer</a></li>
+					<li><a class="link link--gray" href="/privacy">Privacy</a></li>
 				</ul>
 			</nav>
 			<p class="footer-menu__social">
-				<a class="link link--gray" href="">
+				<a class="link link--gray" href="https://twitter.com/billingfox">
 					<i class="mdi mdi-twitter" aria-hidden="true"></i>
 				</a>
 				<!-- <a class="link link--gray" href="">
@@ -290,7 +378,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<p>© 2018 BillingFox </p>
+				<p>© 2018 BillingFox LLC</p>
 			</div>
 		</div>
 	</div>
@@ -300,8 +388,14 @@
 <script src="assets/js/jquery-2.2.4.min.js"></script>
 <script src="assets/js/jquery.waypoints.js"></script>
 <script src="assets/js/menu.js"></script>
-<script src="assets/js/sidebar.js"></script>
 <script src="assets/js/mobile-menu.js"></script>
-<script src="assets/js/style-switcher.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/pricing.js"></script>
+<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/dragscrollable.min.js"></script>
+<script src="assets/js/device.js"></script>
+<script src="assets/js/carousel.js"></script>
+<script src="assets/js/sidebar.js"></script>
+<!-- <script src="assets/js/form.js"></script> -->
 </body>
 </html>

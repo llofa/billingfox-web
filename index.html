@@ -3,37 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="assets/css/main.css" id="main_style">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Main CSS -->
+    <!-- <link rel="stylesheet" href="assets/css/main.css" id="main_style"> -->
+    <!-- Optional Color Options -->
+    <link rel="stylesheet" href="assets/css/blue-gradient.css" id="main_style">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,800" rel="stylesheet">
 	<link href="https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/jquery-ui.min.css">
-	<title>Metered Usage Billing API Platform - BillingFox</title>
+	<title>Usage Based Billing API Platform - BillingFox</title>
 </head>
 <body>
-
-<!--Switcher-->
-<!-- <div class="style-switcher">
-	<span class="style-switcher__control"></span>
-	<div class="style-switcher__list">
-		<a class="style-switcher__link style-switcher__link--red active"></a>
-		<a class="style-switcher__link style-switcher__link--blue"></a>
-		<a class="style-switcher__link style-switcher__link--violet"></a>
-		<a class="style-switcher__link style-switcher__link--green"></a> <br/>
-		<a class="style-switcher__link style-switcher__link--red-gradient"></a>
-		<a class="style-switcher__link style-switcher__link--blue-gradient"></a>
-		<a class="style-switcher__link style-switcher__link--violet-gradient"></a>
-		<a class="style-switcher__link style-switcher__link--green-gradient"></a>
-	</div>
-</div> -->
-<!--Switcher-->
 
 <!--Main menu-->
 <div class="menu">
 	<div class="container menu__wrapper">
 		<div class="row">
 			<div class="menu__logo col-4">
-				<a href="index.html">
+				<a href="/">
 					<svg class="menu__logo-img" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
 						<path data-name="Sigma symbol" class="svg-element"
 						      d="M237.418,8583.56a12.688,12.688,0,0,0,.419-3.37c-0.036-5.24-2.691-9.68-7.024-13.2h-3.878a20.819,20.819,0,0,1,4.478,13.01c0,4.56-2.456,10.2-6.413,11.4a16.779,16.779,0,0,1-2.236.51c-10.005,1.55-14.109-17.54-9.489-23.31,2.569-3.21,6.206-4.08,11.525-4.08h17.935A24.22,24.22,0,0,1,237.418,8583.56Zm-12.145-24.45c-8.571.02-12.338,0.98-16.061,4.84-6.267,6.49-6.462,20.69,4.754,27.72a24.092,24.092,0,1,1,27.3-32.57h-16v0.01Z"
@@ -58,9 +45,9 @@
 								</div>
 							</div> -->
 						</li>
-						<li><a href="05_features.html" class="link link--gray">Blog</a></li>
-						<li><a href="06_pricing.html" class="link link--gray">FAQ</a></li>
-						<li><a href="06_pricing.html" class="link link--gray">Guides</a></li>
+						<!-- <li><a href="05_features.html" class="link link--gray">Blog</a></li> -->
+						<li><a href="/docs" class="link link--gray">API Documentation</a></li>
+						<li><a href="/guides" class="link link--gray">Developer Guides</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -108,21 +95,22 @@
 		</button>
 		<nav class="mobile-menu__wrapper">
 			<ul class="mobile-menu__ul">
-				<li class="mobile-menu__li mobile-menu__li-collapse"><a class="link link--dark-gray">Home
+				<!-- <li class="mobile-menu__li mobile-menu__li-collapse"><a class="link link--dark-gray">Home
 					<span><i class="mdi mdi-chevron-down"></i></span>
 				</a></li>
 				<li class="mobile-menu__ul--collapsed">
-					<!-- <ul class="mobile-menu__ul">
+					<ul class="mobile-menu__ul">
 						<li class="mobile-menu__li"><a class="link link--gray" href="index.html">Mobile App</a></li>
 						<li class="mobile-menu__li"><a class="link link--gray" href="02_messanger.html">Messanger</a></li>
 						<li class="mobile-menu__li"><a class="link link--gray link--gray-active" href="03_webapp.html">Web App</a>
 						</li>
 						<li class="mobile-menu__li"><a class="link link--gray" href="04_desktop.html">Desktop App</a></li>
-					</ul> -->
-				</li>
-				<li class="mobile-menu__li"><a href="#" class="link link--dark-gray">Blog</a></li>
-				<li class="mobile-menu__li"><a href="#" class="link link--dark-gray">FAQ</a></li>
-				<li class="mobile-menu__li"><a href="#" class="link link--dark-gray">Guides</a></li>
+					</ul>
+				</li> -->
+				<li class="mobile-menu__li"><a href="/about" class="link link--dark-gray">About</a></li>
+				<li class="mobile-menu__li"><a href="/contact" class="link link--dark-gray">Contact</a></li>
+				<li class="mobile-menu__li"><a href="/docs" class="link link--dark-gray">Docs</a></li>
+				<li class="mobile-menu__li"><a href="/guides" class="link link--dark-gray">Guides</a></li>
 				<li class="mobile-menu__li"><a href="#" class="site-btn site-btn--accent">Create API Key</a></li>
 				<li class="mobile-menu__li mobile-menu__li-collapse"><a class="link link--dark-gray">En
 					<span><i class="mdi mdi-chevron-down"></i></span></a></li>
@@ -139,13 +127,13 @@
 </div>
 <!--Mobile menu-->
 
-<!--Header-->
+    <!--Header-->
 <header class="header-home header-home--color">
 	<div class="container">
 		<div class="row header-home__webapp-img-wrap">
 			<img alt="" class="header-home__webapp-img" src="assets/img/img_bg_webapp.png">
 			<div class="col-12">
-				<h2 class="header-home__title">Usage Based Billing API Platform</h2>
+				<h2 class="header-home__title">Dead Simple Usage Based Billing API</h2>
 				<p class="header-home__description">An easy to use API for busy developers who want to enable customers to pay for only what they use.</p>
 				<div class="header-home__btns header-home__btns-webapp">
 					<a href="#" class="site-btn site-btn--accent header-home__btn">Create API Key</a>
@@ -411,9 +399,9 @@
 			</a>
 			<nav class="footer-menu__nav">
 				<ul>
-					<li><a class="link link--gray" href="about.html">About</a></li>
-					<li><a class="link link--gray" href="#">Contact</a></li>
-					<li><a class="link link--gray" href="privacy.html">Privacy</a></li>
+					<!-- <li><a class="link link--gray" href="about.html">About</a></li> -->
+					<li><a class="link link--gray" href="#">Disclaimer</a></li>
+					<li><a class="link link--gray" href="/privacy">Privacy</a></li>
 				</ul>
 			</nav>
 			<p class="footer-menu__social">
@@ -456,7 +444,7 @@
 <script src="assets/js/dragscrollable.min.js"></script>
 <script src="assets/js/device.js"></script>
 <script src="assets/js/carousel.js"></script>
-<!-- <script src="assets/js/style-switcher.js"></script>
-<script src="assets/js/form.js"></script> -->
+<script src="assets/js/sidebar.js"></script>
+<!-- <script src="assets/js/form.js"></script> -->
 </body>
 </html>
