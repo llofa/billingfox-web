@@ -1175,8 +1175,8 @@ h4 {
 }
 
 .section .section__title {
-  margin-bottom: 50px;
-  text-align: center
+  margin-top: 50px;
+  text-align: center;
 }
 
 .section .section__description {
@@ -1202,8 +1202,8 @@ h4 {
 }
 
 .section.section--light {
-  background-color: #e5f0ff;
-  padding-top: 128px
+  /* background-color: #e5f0ff;
+  padding-top: 128px */
 }
 
 .section.section--dark {
@@ -1241,7 +1241,7 @@ h4 {
 }
 
 .section.section--bottom-space {
-  margin-bottom: 128px
+  margin-bottom: 64px
 }
 
 .section.section--top-space {
@@ -1306,7 +1306,8 @@ h4 {
   }
 
   .section .section__title {
-    margin-bottom: 40px
+    margin-top: 25px;
+    margin-bottom: 40px;
   }
 
   .section .section__img {
@@ -2790,6 +2791,7 @@ h4 {
 }
 
 .privacy .privacy__chapter-title {
+  margin-top: 50px;
   margin-bottom: 56px
 }
 
