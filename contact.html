@@ -12,6 +12,13 @@
     <link rel="icon" type="image/x-icon" href="https://billingfox.com/logo-100.png">
     <link rel="apple-touch-icon-precomposed" href="https://billingfox.com/logo-stripe.png">
     <link rel="apple-touch-icon" href="https://billingfox.com/logo-stripe.png"> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/site.webmanifest">
+    <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <!-- Main CSS -->
     <!-- <link rel="stylesheet" href="assets/css/main.css" id="main_style"> -->
     <!-- Optional Color Options -->
@@ -182,56 +189,57 @@
 					<div class="form__wrap">
 						<h4>Fill out the form below</h4>
 						<p>To provide feedback, ask questions, or report bugs or errors.</p>
-						<form class="form__form js-form">
+						<form class="form__form js-form action="https://formspree.io/hey@billingfox.com"
+						method="POST"">
 							<div class="form__form-group form__form-group--small">
 								<label class="form__label">First Name</label>
-								<input class="form__input js-field__first-name" type="text" placeholder="John">
+								<input class="form__input js-field__first-name" type="text" placeholder="John" name="firstname">
 								<span class="form-validation"></span>
 							</div>
 							<div class="form__form-group form__form-group--small form__form-group--right">
 								<label class="form__label">Last Name</label>
-								<input class="form__input js-field__last-name" type="text"  placeholder="Doe">
+								<input class="form__input js-field__last-name" type="text"  placeholder="Doe" name="lastname">
 								<span class="form-validation"></span>
 							</div>
 							<div class="form__form-group">
 								<label class="form__label">Email</label>
-								<input class="form__input js-field__email" type="email"  placeholder="example@mail.com" required>
+								<input class="form__input js-field__email" type="email"  placeholder="example@mail.com" required name="_replyto">
 								<span class="form-validation"></span>
 							</div>
 							<div class="form__form-group">
 								<label class="form__label">Phone Number</label>
-								<input class="form__input js-field__phone" type="text" placeholder="( 123 ) 456 - 7890" required>
+								<input class="form__input js-field__phone" type="text" placeholder="( 123 ) 456 - 7890" required name="phonenumber">
 								<span class="form-validation"></span>
 							</div>
 							<div class="form__form-group">
 								<label class="form__label">Company Name</label>
-								<input class="form__input js-field__company" type="text"  placeholder="ABCDE Corporarion">
+								<input class="form__input js-field__company" type="text"  placeholder="ABCDE Corporarion" name="companyname">
 								<span class="form-validation"></span>
 							</div>
 							<div class="form__form-group">
 								<label class="form__label">Company Size (Number of Emploees)</label>
 								<label class="radio-btn">
-									<input class="radio-btn__radio" type="radio" value="1-5" name="company-size" checked>
+									<input class="radio-btn__radio" type="radio" value="1-5" name="company-size" checked name="1to5employees">
 									<span class="radio-btn__radio-custom"></span>
 									<span class="radio-btn__label">1-5</span>
 								</label>
 								<label class="radio-btn">
-									<input class="radio-btn__radio" type="radio" value="6-50"  name="company-size">
+									<input class="radio-btn__radio" type="radio" value="6-50"  name="company-size" name="6to50employees">
 									<span class="radio-btn__radio-custom"></span>
 									<span class="radio-btn__label">6-50</span>
 								</label>
 								<label class="radio-btn">
-									<input class="radio-btn__radio" type="radio" value="51-200" name="company-size">
+									<input class="radio-btn__radio" type="radio" value="51-200" name="company-size" name="51to200employees">
 									<span class="radio-btn__radio-custom"></span>
 									<span class="radio-btn__label">51-200</span>
 								</label>
 								<label class="radio-btn">
-									<input class="radio-btn__radio" type="radio" value="201-1000" name="company-size">
+									<input class="radio-btn__radio" type="radio" value="201-1000" name="company-size" name="201to1000employees">
 									<span class="radio-btn__radio-custom"></span>
 									<span class="radio-btn__label">201-1000</span>
 								</label>
 								<label class="radio-btn">
-									<input class="radio-btn__radio" type="radio" value="1001+"  name="company-size">
+									<input class="radio-btn__radio" type="radio" value="1001+"  name="company-size" name="1001plusemployees">
 									<span class="radio-btn__radio-custom"></span>
 									<span class="radio-btn__label">1001+</span>
 								</label>
@@ -245,6 +253,7 @@
 								</label>
 							</div>
 							<button class="site-btn site-btn--accent form__submit disable" type="submit" value="Send" disabled>Get the Sigma</button>
+							<!-- <input type="hidden" name="_next" value="//billingfox.com/thanks" /> -->
 						</form>
 					</div>
 				</div>
@@ -275,9 +284,9 @@
 				<a class="link link--gray" href="https://twitter.com/billingfox">
 					<i class="mdi mdi-twitter" aria-hidden="true"></i>
 				</a>
-				<a class="link link--gray" href="#">
-					<i class="mdi mdi-github" aria-hidden="true"></i>
-				</a>
+				<!-- <a class="link link--gray" href="#">
+					<i class="mdi mdi-facebook" aria-hidden="true"></i>
+				</a> -->
 				<!-- <a class="link link--gray" href="">
 					<i class="mdi mdi-linkedin" aria-hidden="true"></i>
 				</a> -->
@@ -312,6 +321,6 @@
 <script src="assets/js/device.js"></script>
 <script src="assets/js/carousel.js"></script>
 <script src="assets/js/sidebar.js"></script>
-<!-- <script src="assets/js/form.js"></script> -->
+<script src="assets/js/form.js"></script>
 </body>
 </html>

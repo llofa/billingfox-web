@@ -12,6 +12,13 @@
     <link rel="icon" type="image/x-icon" href="https://billingfox.com/logo-100.png">
     <link rel="apple-touch-icon-precomposed" href="https://billingfox.com/logo-stripe.png">
     <link rel="apple-touch-icon" href="https://billingfox.com/logo-stripe.png"> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/site.webmanifest">
+    <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <!-- Main CSS -->
     <!-- <link rel="stylesheet" href="assets/css/main.css" id="main_style"> -->
     <!-- Optional Color Options -->
@@ -192,7 +199,7 @@
 		<div class="row privacy">
 			<div class="col-9 col-t-12">
 				<div class="privacy__content">
-					<div id="chapter1" class="privacy__chapter chapter">
+					<div id="getting-started" class="privacy__chapter chapter">
 						<h3 class="privacy__chapter-title">Getting Started</h3>
 						<p>​​Implement our API by setting up actions within your service and then assigning worth to those actions via spend​ calls to BillingFox.</p>
 						<p>Open this page, watch that video, call the other API. Whatever. Just correlate those actions to spending a user's account credits.</p> 
@@ -201,8 +208,8 @@
 							Once they fill out that invoice we'll credit their balance, subtract the fees and pass on the rest to you.</p>
 						<p>​​As a concrete example, if a user were to fill out a $25 invoice</p>
 						<ul class="privacy__chapter-list">
-							<li>Stripe would take out `2.9% + $0.3​` = $1.03</li>
-							<li>BillingFox would take out '5%'​ = $1.25</li>
+							<li>Stripe would take out <code>2.9% + $0.3​</code> = $1.03</li>
+							<li>BillingFox would take out <code>5%</code> = $1.25</li>
 							<li>The user would receive 2,500 credits</li>
 							<li>Leaving you with $22.72</li>
 						</ul>
@@ -217,484 +224,324 @@
 						<p class="privacy__chapter-description--bold privacy__chapter-list-title">BillingFox API - is the last piece of the puzzle</p> <p>While it might sound tricky or feel like black magic at times. 
 						It’s actually just simple, smart and straightforward. You give us a user and then begin spending their credit balance.</p>
 						<h4>What’s the ratio of $$ to user credit?</h4>
-						<p>Simple. If a user clears a $10 invoice we’ll credit them 1,000 credits. `1 credit = 1¢` Use this information to decide how much you want to spend per call when it comes time to make those calls. 
+						<p>Simple. If a user clears a $10 invoice we’ll credit them 1,000 credits. <code>1 credit = 1¢</code> Use this information to decide how much you want to spend per call when it comes time to make those calls. 
 						This is also obviously helpful for deciding on your account settings page what to set the initial credit and alert level at.</p>
 						<h4>What does BillingFox cost?</h4>
-						<p>BillingFox has a fixed fee of `5%` . However this is added on top of Stripe’s fee of `2.9% + 30¢` per transaction. 
+						<p>BillingFox has a fixed fee of <code>5%</code>. However this is added on top of Stripe’s fee of <code>2.9% + 30¢</code> per transaction. 
 						So for example if a user where to clear that $10 invoice, Stripe would take 59¢, BillingFox would take 50¢, leaving you with $8.91.</p>
 					</div>
-					<div id="chapter2" class="privacy__chapter chapter">
+					<div id="authentication" class="privacy__chapter chapter">
 						<h3 class="privacy__chapter-title">Authentication</h3>
 						<p>Once you've created and signed into your BillingFox account you'll be presented with a screen containing your API key.</p>
 						<img src="https://i.imgur.com/F4absFE.png" />
-						<p>You'll simply need to include that token as an `Authorization` header with the `Bearer` prefix.</p>
+						<p>You'll simply need to include that token as an <code>Authorization</code> header with the <code>Bearer</code> prefix.</p>
 						<img src="https://i.imgur.com/jQbbdg1.png" />
 						<p>Once you've got that set you're ready to run with the BillingFox API!</p>
 					</div>
-					<div id="chapter3" class="privacy__chapter chapter">
+					<div id="errors" class="privacy__chapter chapter">
 						<h3 class="privacy__chapter-title">Errors</h3>
 						<p>All errors are in the format:</p>
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">400</span><span class="w">
-	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized. Access token is invalid"</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">402</span><span class="w">
-	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Insufficient available balance to spend 5 credits"</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"process"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+{ // 400
+	"message": "Unauthorized. Access token is invalid",
+	"status": "error"
+}
+						</pre>
+						<pre class="prettyprint lang-js">
+{ // 402
+	"message": "Insufficient available balance to spend 5 credits",
+	"status": "process"
+}
+						</pre>
 					</div>
-					<div id="chapter4" class="privacy__chapter chapter">
+					<div id="networks" class="privacy__chapter chapter">
 						<h3 class="privacy__chapter-title">Networks</h3>
 						<p>The BillingFox API has a concept of live and test networks.</p>
-						<p>For all testing you should be hitting the `test.billingfox.com`</p>
-						<p>Once you’re ready for production you should be using `live.billingfox.com`</p>
+						<p>For all testing you should be hitting the <pre>test.billingfox.com</pre></p>
+						<p>Once you’re ready for production you should be using <pre>live.billingfox.com</pre></p>
 					</div>
-					<div id="chapter5" class="privacy__chapter chapter">
+					<div id="ping-api" class="privacy__chapter chapter">
 						<h3 class="privacy__chapter-title">Ping</h3>
 						<p>​​Test your access token and get some basic details on your account.</p>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="code"><pre><span class="err">GET</span><span class="w"> </span><span class="err">\ping</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+GET \ping
+						</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="err">curl</span><span class="w"> </span><span class="err">--request</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">\</span><span class="w">
-</span><span class="err">​​</span><span class="w">  </span><span class="err">--url</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//test.billingfox.com/api/ping</span><span class="w"> </span><span class="err">\</span><span class="w">
-</span><span class="err">​​</span><span class="w">  </span><span class="err">--header</span><span class="w"> </span><span class="err">'accept</span><span class="p">:</span><span class="w"> </span><span class="err">application/json'</span><span class="w"> </span><span class="err">\</span><span class="w">
-</span><span class="err">​​</span><span class="w">  </span><span class="err">--header</span><span class="w"> </span><span class="err">'authorization</span><span class="p">:</span><span class="w"> </span><span class="err">Bearer</span><span class="w"> </span><span class="err">YOUR</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">KEY</span><span class="w"> </span><span class="err">HERE'</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint">
+curl --request GET \
+​​  --url https://test.billingfox.com/api/ping \
+​​  --header 'accept: application/json' \
+​​  --header 'authorization: Bearer YOUR API KEY HERE'
+						</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="code"><pre><span class="err">​​</span><span class="p">{</span><span class="err">//</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">Success</span><span class="w">
-</span><span class="err">​​</span><span class="w">  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authorized. Token is valid"</span><span class="p">,</span><span class="w">
-</span><span class="err">​​</span><span class="w">  </span><span class="s2">"dev"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="err">​​</span><span class="w">    </span><span class="s2">"referral"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ebCX4utspAw"</span><span class="p">,</span><span class="w">
-</span><span class="err">​​</span><span class="w">    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hey@billingfox.com"</span><span class="p">,</span><span class="w">
-</span><span class="err">​​</span><span class="w">    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16T21:26:03.693Z"</span><span class="w">
-</span><span class="err">​​</span><span class="w">  </span><span class="p">},</span><span class="w">
-</span><span class="err">​​</span><span class="w">  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
-</span><span class="err">​​</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+​​{// 200 Success
+​​  "message": "Authorized. Token is valid",
+​​  "dev": {
+​​    "referral": "ebCX4utspAw",
+​​    "email": "demo@billingfox.com",
+​​    "created_at": "2017-07-16T21:26:03.693Z"
+​​  },
+​​  "status": "success"
+​​}
+						</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="err">​​</span><span class="p">{</span><span class="err">//</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="err">Error</span><span class="w">
-</span><span class="err">​​</span><span class="w">  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized. Access token is invalid"</span><span class="p">,</span><span class="w">
-</span><span class="err">​​</span><span class="w">  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="w">
-</span><span class="err">​​</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
-
+						<pre class="prettyprint lang-js">
+​​{// 400 Error
+​​  "message": "Unauthorized. Access token is invalid",
+​​  "status": "error"
+​​}
+						</pre>
 					</div>
-					<div id="chapter6" class="privacy__chapter chapter">
-						<h3 class="privacy__chapter-title">'POST` Identify</h3>
+					<div id="post-identify" class="privacy__chapter chapter">
+						<h3 class="privacy__chapter-title"><code>POST</code> Identify</h3>
 						<p>​​Create user's within the BillingFox ecosystem whose credits you can then begin to spend.</p>
 
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="code"><pre><span class="err">POST</span><span class="w"> </span><span class="err">/identify</span><span class="w">
-						</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+POST /identify
+						</pre>
 
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="err">curl</span><span class="w"> </span><span class="err">--request</span><span class="w"> </span><span class="err">POST</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--url</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//test.billingfox.com/api/identify</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--header</span><span class="w"> </span><span class="err">'accept</span><span class="p">:</span><span class="w"> </span><span class="err">application/json'</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--header</span><span class="w"> </span><span class="err">'authorization</span><span class="p">:</span><span class="w"> </span><span class="err">Bearer</span><span class="w"> </span><span class="err">YOUR</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">KEY</span><span class="w"> </span><span class="err">HERE'</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--form</span><span class="w"> </span><span class="err">user=user_abc</span><span class="mi">123</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--form</span><span class="w"> </span><span class="err">email=tyler@billingfox.com</span><span class="w">
-						</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+curl --request POST \
+	--url https://test.billingfox.com/api/identify \
+	--header 'accept: application/json' \
+	--header 'authorization: Bearer YOUR API KEY HERE' \
+	--form user=user_abc123 \
+	--form email=demo@billingfox.com
+						</pre>
 
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> 	</span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">user</span><span class="w">
-	</span><span class="err">user</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_abc123"</span><span class="p">,</span><span class="w">
-	</span><span class="err">//</span><span class="w"> </span><span class="err">A</span><span class="w"> </span><span class="err">valid</span><span class="w"> </span><span class="err">email</span><span class="w"> </span><span class="err">address</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">user</span><span class="p">,</span><span class="w"> </span><span class="err">so</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">send</span><span class="w"> </span><span class="err">them</span><span class="w"> </span><span class="err">invoices</span><span class="w">
-	</span><span class="err">email</span><span class="p">:</span><span class="w"> </span><span class="s2">"tyler@billingfox.com"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-						</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+{ 	// The ID for this user
+	user: "user_abc123",
+	// A valid email address for this user, so we can send them invoices
+	email: "demo@billingfox.com"
+}
+						</pre>
 
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">Success</span><span class="w">
-	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User successfully created/updated"</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-						</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+{ // 200 Success
+	"message": "User successfully created/updated",
+	"status": "success"
+}
+						</pre>
 
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="err">Error</span><span class="w">
-	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Match error: Failed Match.Where validation in field email"</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
- 						</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+{ // 400 Error
+	"message": "Match error: Failed Match.Where validation in field email",
+	"status": "error"
+}
+						</pre>
 					</div>
-					<div id="chapter7" class="privacy__chapter chapter">
-							<h3 class="privacy__chapter-title">`GET` Identify</h3>
+					<div id="get-identify" class="privacy__chapter chapter">
+							<h3 class="privacy__chapter-title"><code>GET</code> Identify</h3>
 							<p>Retrieve a user’s data. Email and balance.</p>
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="code"><pre><span class="err">GET</span><span class="w"> </span><span class="err">/identify</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="err">curl</span><span class="w"> </span><span class="err">--request</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--url</span><span class="w"> </span><span class="err">'https</span><span class="p">:</span><span class="err">//test.billingfox.com/api/identify?user=user_abc_</span><span class="mi">123</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--header</span><span class="w"> </span><span class="err">'accept</span><span class="p">:</span><span class="w"> </span><span class="err">application/json'</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--header</span><span class="w"> </span><span class="err">'authorization</span><span class="p">:</span><span class="w"> </span><span class="err">Bearer</span><span class="w"> </span><span class="err">YOUR</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">KEY</span><span class="w"> </span><span class="err">HERE'</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+							<pre class="prettyprint lang-js">
+GET /identify
+							</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w">
-	</span><span class="err">//</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">user</span><span class="w"> </span><span class="err">you'd</span><span class="w"> </span><span class="err">like</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">retrieve</span><span class="w">
-	</span><span class="err">user</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_abc_123"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+							<pre class="prettyprint lang-js">
+curl --request GET \
+	--url https://test.billingfox.com/api/identify?user=user_abc_123 \
+	--header 'accept: application/json' \
+	--header 'authorization: Bearer YOUR API KEY HERE'
+							</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">200</span><span class="w">
-	</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-		</span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3vSdThRP"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tyler@billingfox.com"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-		</span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"95.0000000"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"current"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0000000"</span><span class="w">
-		</span><span class="p">},</span><span class="w">
-		</span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://billlingfox.com/invoice/abc_123_link_to_invoice"</span><span class="w">
-	</span><span class="p">},</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+							<pre class="prettyprint lang-js">
+{
+	// ID for the user you'd like to retrieve
+	user: "user_abc_123"
+}
+							</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="err">Error</span><span class="w">
-	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Match error: Failed Match.Where validation in field user"</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+							<pre class="prettyprint lang-js">
+{ // 200
+	"user": {
+		"key": "3vSdThRP",
+		"email": "demo@billingfox.com",
+		"balances": {
+		"available": "95.0000000",
+		"current": "100.0000000"
+		},
+		"link": "https://billlingfox.com/invoice/abc_123_link_to_invoice"
+	},
+	"status": "success"
+}
+							</pre>
+
+							<pre class="prettyprint lang-js">
+{ // 400 Error
+	"message": "Match error: Failed Match.Where validation in field user",
+	"status": "error"
+}
+							</pre>
 						</div>
-					<div id="chapter8" class="privacy__chapter chapter">
-						<h3 class="privacy__chapter-title">`POST` Spend</h3>
+					<div id="post-spend" class="privacy__chapter chapter">
+						<h3 class="privacy__chapter-title"><code>POST</code> Spend</h3>
 						<p>Spend a user's account credit balance.</p>
 
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="code"><pre><span class="err">POST</span><span class="w"> </span><span class="err">/spend</span><span class="w">
-						</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+POST /spend
+						</pre>
 
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="err">curl</span><span class="w"> </span><span class="err">--request</span><span class="w"> </span><span class="err">POST</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--url</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//test.billingfox.com/api/spend</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--header</span><span class="w"> </span><span class="err">'accept</span><span class="p">:</span><span class="w"> </span><span class="err">application/json'</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--header</span><span class="w"> </span><span class="err">'authorization</span><span class="p">:</span><span class="w"> </span><span class="err">Bearer</span><span class="w"> </span><span class="err">YOUR</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">KEY</span><span class="w"> </span><span class="err">HERE'</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--form</span><span class="w"> </span><span class="err">amount=</span><span class="mf">1.0</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--form</span><span class="w"> </span><span class="err">user=user_abc</span><span class="mi">123</span><span class="w">
-						</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+curl --request POST \
+	--url https://test.billingfox.com/api/spend \
+	--header 'accept: application/json' \
+	--header 'authorization: Bearer YOUR API KEY HERE' \
+	--form amount=1.0 \
+	--form user=user_abc123
+						</pre>
 
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w">
-	</span><span class="err">//</span><span class="w"> </span><span class="err">Whose</span><span class="w"> </span><span class="err">fuel</span><span class="w"> </span><span class="err">would</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">like</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">burn?</span><span class="w">
-	</span><span class="err">user</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_abc123"</span><span class="p">,</span><span class="w">
-	</span><span class="err">//</span><span class="w"> </span><span class="err">How</span><span class="w"> </span><span class="err">much</span><span class="w"> </span><span class="err">fuel</span><span class="w"> </span><span class="err">would</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">like</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">burn?</span><span class="w">
-	</span><span class="err">amount</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
-	</span><span class="err">//</span><span class="w"> </span><span class="err">Any</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">text</span><span class="w"> </span><span class="err">you'd</span><span class="w"> </span><span class="err">like</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">append</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">spend</span><span class="w"> </span><span class="err">call</span><span class="w">
-	</span><span class="err">description</span><span class="p">:</span><span class="w"> </span><span class="s2">"A helpful description for this spend call"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-						</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+{
+	// Whose fuel would you like to burn?
+	user: "user_abc123",
+	// How much fuel would you like to burn?
+	amount: 1.0,
+	// Any description text you'd like to append to this spend call
+	description: "A helpful description for this spend call"
+}
+						</pre>
 
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">Success</span><span class="w">
-	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 credits were spent"</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-	  </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"95.0000000"</span><span class="p">,</span><span class="w">
-	  </span><span class="s2">"current"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0000000"</span><span class="w">
-	</span><span class="p">},</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
- </span><span class="p">}</span><span class="w">
-						</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+{ // 200 Success
+	"message": "5 credits were spent",
+	"balances": {
+		"available": "95.0000000",
+		"current": "100.0000000"
+	},
+	"status": "success"
+}
+						</pre>
 
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="err">Error</span><span class="w">
-	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Match error: Failed Match.Where validation in field user"</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-						</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+{ // 400 Error
+	"message": "Match error: Failed Match.Where validation in field user",
+	"status": "error"
+}
+						</pre>
 
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">402</span><span class="w"> </span><span class="err">Insufficent</span><span class="w">
-	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Insufficient available balance to spend 2 credits"</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://billingfox.com/invoice/abc_123_link_to_invoice"</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-	  </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0000000"</span><span class="p">,</span><span class="w">
-	  </span><span class="s2">"current"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0000000"</span><span class="w">
-	</span><span class="p">},</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"process"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-						</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+{ // 402 Insufficent
+	"message": "Insufficient available balance to spend 2 credits",
+	"link": "https://billingfox.com/invoice/abc_123_link_to_invoice",
+	"balances": {
+		"available": "2.0000000",
+		"current": "2.0000000"
+	},
+	"status": "process"
+}
+						</pre>
 					</div>
-					<div id="chapter9" class="privacy__chapter chapter">
-							<h3 class="privacy__chapter-title">`GET` Spend</h3>
+					<div id="get-spend" class="privacy__chapter chapter">
+							<h3 class="privacy__chapter-title"><code>GET</code> Spend</h3>
 							<p>Retrieve an array of spends for a given user.</p>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="code"><pre><span class="err">GET</span><span class="w"> </span><span class="err">/spend</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+							<pre class="prettyprint lang-js">
+GET /spend								
+							</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="err">curl</span><span class="w"> </span><span class="err">--request</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--url</span><span class="w"> </span><span class="err">'https</span><span class="p">:</span><span class="err">//test.billingfox.com/api/spends?user=user_abc_</span><span class="mi">123</span><span class="err">&amp;gte=</span><span class="mi">2017-08-01</span><span class="err">&amp;lte=</span><span class="mi">2017-08-31</span><span class="err">'</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--header</span><span class="w"> </span><span class="err">'accept</span><span class="p">:</span><span class="w"> </span><span class="err">application/json'</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--header</span><span class="w"> </span><span class="err">'authorization</span><span class="p">:</span><span class="w"> </span><span class="err">Bearer</span><span class="w"> </span><span class="err">YOUR</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">KEY</span><span class="w"> </span><span class="err">HERE'</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+							<pre class="prettyprint lang-js">
+curl --request GET \
+	--url https://test.billingfox.com/api/spends?user=user_abc_123&gte=2017-08-01&lte=2017-08-31 \
+	--header 'accept: application/json' \
+	--header 'authorization: Bearer YOUR API KEY HERE'
+							</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w">
-	</span><span class="err">//</span><span class="w"> </span><span class="err">User</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="err">you'd</span><span class="w"> </span><span class="err">like</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">retrieve</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">spends</span><span class="w"> </span><span class="err">for</span><span class="w">
-	</span><span class="err">user</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_abc_123"</span><span class="p">,</span><span class="w">
-	</span><span class="err">//</span><span class="w"> </span><span class="err">Greater</span><span class="w"> </span><span class="err">than</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">equal</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">date</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">limiting</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">spends</span><span class="w">
-	</span><span class="err">gte</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-01"</span><span class="w">
-	</span><span class="err">//</span><span class="w"> </span><span class="err">Less</span><span class="w"> </span><span class="err">than</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">equal</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">date</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">limiting</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">spends</span><span class="w">
-	</span><span class="err">lte</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-31"</span><span class="w">
-	</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+							<pre class="prettyprint lang-js">
+{
+	// User id you'd like to retrieve the spends for
+	user: "user_abc_123",
+	// Greater than or equal to date string for limiting the array of spends
+	gte: "2017-08-01"
+	// Less than or equal to date string for limiting the array of spends
+	lte: "2017-08-31"
+}
+							</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">Success</span><span class="w">
-	</span><span class="s2">"spends"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-		</span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spend_abc_123"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Some meta data"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"spent_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-04T15:22:55.833Z"</span><span class="w">
-	</span><span class="p">},</span><span class="w"> </span><span class="err">...</span><span class="p">],</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
-	</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+							<pre class="prettyprint lang-js">
+{ // 200 Success
+	"spends": [{
+		"_id": "spend_abc_123",
+		"amount": 2,
+		"description": "Some meta data",
+		"spent_at": "2017-08-04T15:22:55.833Z"
+	}, ...],
+	"status": "success"
+}
+							</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="err">Error</span><span class="w">
-	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Match error: Failed Match.Where validation in field user"</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="w">
-	</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+							<pre class="prettyprint lang-js">
+{ // 400 Error
+	"message": "Match error: Failed Match.Where validation in field user",
+	"status": "error"
+}
+							</pre>
 						</div>
-					<div id="chapter10" class="privacy__chapter chapter">
+					<div id="recharge" class="privacy__chapter chapter">
 						<h3 class="privacy__chapter-title">Recharge</h3>
 						<p>Top up user's account with an amount of credits.</p>
 
-						<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="code"><pre><span class="err">POST</span><span class="w"> </span><span class="err">/recharge</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+POST /recharge
+						</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="code"><pre><span class="err">curl</span><span class="w"> </span><span class="err">--request</span><span class="w"> </span><span class="err">POST</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--url</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//test.billingfox.com/api/recharge</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--header</span><span class="w"> </span><span class="err">'accept</span><span class="p">:</span><span class="w"> </span><span class="err">application/json'</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--header</span><span class="w"> </span><span class="err">'authorization</span><span class="p">:</span><span class="w"> </span><span class="err">Bearer</span><span class="w"> </span><span class="err">YOUR</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">KEY</span><span class="w"> </span><span class="err">HERE'</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--form</span><span class="w"> </span><span class="err">amount=</span><span class="mf">100.0</span><span class="w"> </span><span class="err">\</span><span class="w">
-	</span><span class="err">--form</span><span class="w"> </span><span class="err">user=user_abc</span><span class="mi">123</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+curl --request POST \
+	--url https://test.billingfox.com/api/recharge \
+	--header 'accept: application/json' \
+	--header 'authorization: Bearer YOUR API KEY HERE' \
+	--form amount=100.0 \
+	--form user=user_abc123
+						</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w">
-	</span><span class="err">//</span><span class="w"> </span><span class="err">Whose</span><span class="w"> </span><span class="err">account</span><span class="w"> </span><span class="err">would</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">like</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">credit?</span><span class="w">
-	</span><span class="err">user</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_abc123"</span><span class="p">,</span><span class="w">
-	</span><span class="err">//</span><span class="w"> </span><span class="err">How</span><span class="w"> </span><span class="err">much</span><span class="w"> </span><span class="err">credit</span><span class="w"> </span><span class="err">would</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">like</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">give?</span><span class="w">
-	</span><span class="err">amount</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="p">,</span><span class="w">
-	</span><span class="err">//</span><span class="w"> </span><span class="err">Any</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">text</span><span class="w"> </span><span class="err">you'd</span><span class="w"> </span><span class="err">like</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">append</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">credit</span><span class="w"> </span><span class="err">call</span><span class="w">
-	</span><span class="err">description</span><span class="p">:</span><span class="w"> </span><span class="s2">"A helpful description for this spend call"</span><span class="w">
-	</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+{
+	// Whose account would you like to credit?
+	user: "user_abc123",
+	// How much credit would you like to give?
+	amount: 100.0,
+	// Any description text you'd like to append to this credit call
+	description: "A helpful description for this spend call"
+}
+						</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">Success</span><span class="w">
-	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100 credits were credited"</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-		</span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200.0000000"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"current"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.0000000"</span><span class="w">
-	</span><span class="p">},</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
-	</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+{ // 200 Success
+	"message": "100 credits were credited",
+	"balances": {
+		"available": "200.0000000",
+		"current": "100.0000000"
+	},
+	"status": "success"
+}
+						</pre>
 
-							<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="err">Error</span><span class="w">
-	</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Match error: Failed Match.Where validation in field user"</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="w">
-	</span><span class="p">}</span><span class="w">
-							</span></pre></td></tr></tbody></table></code></pre></figure>
+						<pre class="prettyprint lang-js">
+{ // 400 Error
+	"message": "Match error: Failed Match.Where validation in field user",
+	"status": "error"
+}
+						</pre>
 					</div>
 				</div>
 			</div>
 			<div class="col-3 d-t-none">
 				<nav class="sidebar">
 					<ul class="sidebar__list">
-						<li class="sidebar__item active"><a href="#chapter1">Getting Started</a></li>
-						<li class="sidebar__item"><a href="#chapter2">Authentication</a></li>
-						<li class="sidebar__item"><a href="#chapter3">Errors</a></li>
-						<li class="sidebar__item"><a href="#chapter4">Networks</a></li>
-						<li class="sidebar__item"><a href="#chapter5">Ping</a></li>
-						<li class="sidebar__item"><a href="#chapter6">POST Identify</a></li>
-						<li class="sidebar__item"><a href="#chapter7">GET Identify</a></li>
-						<li class="sidebar__item"><a href="#chapter8">POST Spend</a></li>
-						<li class="sidebar__item"><a href="#chapter9">GET Spend</a></li>
-						<li class="sidebar__item"><a href="#chapter10">POST Recharge</a></li>
+						<li class="sidebar__item active"><a href="#getting-started">Getting Started</a></li>
+						<li class="sidebar__item"><a href="#authentication">Authentication</a></li>
+						<li class="sidebar__item"><a href="#errors">Errors</a></li>
+						<li class="sidebar__item"><a href="#networks">Networks</a></li>
+						<li class="sidebar__item"><a href="#ping-api">Ping</a></li>
+						<li class="sidebar__item"><a href="#post-identify"><code>POST</code> Identify</a></li>
+						<li class="sidebar__item"><a href="#get-identify"><code>GET</code> Identify</a></li>
+						<li class="sidebar__item"><a href="#post-spend"><code>POST</code> Spend</a></li>
+						<li class="sidebar__item"><a href="#get-spend"><code>GET</code> Spend</a></li>
+						<li class="sidebar__item"><a href="#recharge">Recharge</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -706,6 +553,7 @@
 <div id="endMenu" class="section section--last">
 	<!-- <img alt="" class="section__img" src="assets/img/img_backgroud_footer.png"> -->
 </div>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
 
 <!--Footer menu-->
 <div class="container footer-menu">
@@ -727,9 +575,9 @@
 				<a class="link link--gray" href="https://twitter.com/billingfox">
 					<i class="mdi mdi-twitter" aria-hidden="true"></i>
 				</a>
-				<a class="link link--gray" href="#">
-					<i class="mdi mdi-github" aria-hidden="true"></i>
-				</a>
+				<!-- <a class="link link--gray" href="#">
+					<i class="mdi mdi-facebook" aria-hidden="true"></i>
+				</a> -->
 				<!-- <a class="link link--gray" href="">
 					<i class="mdi mdi-linkedin" aria-hidden="true"></i>
 				</a> -->
@@ -764,6 +612,6 @@
 <script src="assets/js/device.js"></script>
 <script src="assets/js/carousel.js"></script>
 <script src="assets/js/sidebar.js"></script>
-<!-- <script src="assets/js/form.js"></script> -->
+<script src="assets/js/form.js"></script>
 </body>
 </html>

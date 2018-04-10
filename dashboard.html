@@ -12,6 +12,13 @@
     <link rel="icon" type="image/x-icon" href="https://billingfox.com/logo-100.png">
     <link rel="apple-touch-icon-precomposed" href="https://billingfox.com/logo-stripe.png">
     <link rel="apple-touch-icon" href="https://billingfox.com/logo-stripe.png"> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/site.webmanifest">
+    <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <!-- Main CSS -->
     <!-- <link rel="stylesheet" href="assets/css/main.css" id="main_style"> -->
     <!-- Optional Color Options -->
@@ -191,32 +198,38 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<h3 class="section__title">Developer Details</h3>
+				<h3 class="section__title">Platform Developer Details</h3>
 			</div>
 		</div>
 		<div class="row form">
 			<div class="col-10 col-m-12 col-offset-1">
 				<div class="form__card card form__card--background" style="background-image: url('assets/img/img_bg_form-doesntExist.png')">
 					<div class="form__wrap">
-						<h4>Fill out the form below</h4>
-						<p>To provide feedback, ask questions, or report bugs or errors.</p>
+						<h4>API Settings</h4>
+						<!-- <p>To provide feedback, ask questions, or report bugs or errors.</p> -->
 						<form class="form__form js-form">
 							<div class="form__form-group form__form-group--small">
-								<label class="form__label">First Name</label>
-								<input class="form__input js-field__first-name" type="text" placeholder="John">
+								<label class="form__label">Starting Amount</label>
+								<input class="form__input js-field__first-name" type="text" placeholder="0000">
 								<span class="form-validation"></span>
 							</div>
 							<div class="form__form-group form__form-group--small form__form-group--right">
-								<label class="form__label">Last Name</label>
-								<input class="form__input js-field__last-name" type="text"  placeholder="Doe">
+								<label class="form__label">Low Level Alert</label>
+								<input class="form__input js-field__last-name" type="text"  placeholder="000">
 								<span class="form-validation"></span>
 							</div>
 							<div class="form__form-group">
-								<label class="form__label">Email</label>
+								<p>Starting amount is the number of credits you'll be preloading into each new user account. The low level alert is the number a user's balance must reach before refill notices begin going out.</p>
+							</div>
+							<div class="form__form-group">
+								<label class="form__label">Access Bearer Token</label>
 								<input class="form__input js-field__email" type="email"  placeholder="example@mail.com" required>
 								<span class="form-validation"></span>
 							</div>
 							<div class="form__form-group">
+								<p>The access bearer token is your key to the BillingFox API. This token will allow you to create users and burn up their balances however you see fit. Read the <a href="/docs">API docs</a> for more info.</p>
+							</div>
+							<!-- <div class="form__form-group">
 								<label class="form__label">Phone Number</label>
 								<input class="form__input js-field__phone" type="text" placeholder="( 123 ) 456 - 7890" required>
 								<span class="form-validation"></span>
@@ -261,8 +274,10 @@
 									<span class="checkbox-btn__label">I read and agree to
 										<a href="09_privacy.html" target="_blank" class="link link--accent link--accent-bold">Terms & Conditions</a></span>
 								</label>
+							</div> -->
+							<div class="form__form-group">
+								<button class="site-btn site-btn--accent">Open Stripe Dashboard</button>
 							</div>
-							<button class="site-btn site-btn--accent form__submit disable" type="submit" value="Send" disabled>Get the Sigma</button>
 						</form>
 					</div>
 				</div>
@@ -293,9 +308,9 @@
 				<a class="link link--gray" href="https://twitter.com/billingfox">
 					<i class="mdi mdi-twitter" aria-hidden="true"></i>
 				</a>
-				<a class="link link--gray" href="#">
-					<i class="mdi mdi-github" aria-hidden="true"></i>
-				</a>
+				<!-- <a class="link link--gray" href="#">
+					<i class="mdi mdi-facebook" aria-hidden="true"></i>
+				</a> -->
 				<!-- <a class="link link--gray" href="">
 					<i class="mdi mdi-linkedin" aria-hidden="true"></i>
 				</a> -->
@@ -330,6 +345,6 @@
 <script src="assets/js/device.js"></script>
 <script src="assets/js/carousel.js"></script>
 <script src="assets/js/sidebar.js"></script>
-<!-- <script src="assets/js/form.js"></script> -->
+<script src="assets/js/form.js"></script>
 </body>
 </html>
