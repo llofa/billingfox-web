@@ -4985,7 +4985,8 @@ textarea {
   background: #38e0c4;
   color: #fff;
   box-shadow: 0 20px 30px rgba(125, 147, 178, .3);
-  border: none
+  border: none;
+  margin-bottom: 15px;
 }
 
 .site-btn.site-btn--accent-green:hover {
@@ -5029,9 +5030,4 @@ textarea {
   color: hsla(0, 0%, 100%, .3);
   opacity: .8;
   cursor: default
-}
-
-hr.style {
-	background-color: #fff;
-	border-top: 2px dashed #8c8b8b;
 }
