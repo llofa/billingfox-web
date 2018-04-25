@@ -588,7 +588,8 @@ hr {
 
 pre {
   font-family: monospace, monospace;
-  font-size: 1em
+  font-size: 1em;
+  overflow: auto
 }
 
 a {
@@ -1020,6 +1021,12 @@ h4 {
 
   .header-home .header-home__btn {
     margin-bottom: 30px
+  }
+  .menu .col-4 {
+    width: 30%;
+  }
+  .menu .menu__logo {
+  width: 70%;
   }
 }
 
@@ -4210,6 +4217,7 @@ h4 {
 
 .sidebar.sidebar--fixed {
   position: fixed;
+  margin-top: 0;
   top: 95px;
   -webkit-transform: translateY(0);
   transform: translateY(0);
@@ -4235,109 +4243,6 @@ h4 {
 
 .sidebar .sidebar__item.active {
   background-color: #e5f0ff
-}
-
-.style-switcher {
-  position: fixed;
-  right: -200px;
-  bottom: 50px;
-  z-index: 100;
-  transition: all .6s
-}
-
-.style-switcher .style-switcher__control {
-  position: absolute;
-  bottom: 0;
-  left: -48px;
-  cursor: pointer;
-  width: 48px;
-  height: 48px;
-  background: #234c87;
-  box-shadow: 0 20px 30px rgba(125, 147, 178, .3);
-  border-radius: 8px 0 0 8px;
-  transition: all .5s
-}
-
-.style-switcher .style-switcher__control:after {
-  content: url(../img/img_color.png);
-  position: absolute;
-  color: #fff;
-  pointer-events: none;
-  transition: all .5s;
-  top: 12px;
-  left: 12px;
-  height: 24px
-}
-
-.style-switcher .style-switcher__control:hover {
-  box-shadow: 0 10px 20px rgba(125, 147, 178, .1)
-}
-
-.style-switcher .style-switcher__control:hover:after {
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg)
-}
-
-.style-switcher .style-switcher__list {
-  padding: 16px 8px 16px 16px;
-  background: #fefefe;
-  box-shadow: 0 15px 40px rgba(125, 147, 178, .3);
-  border-radius: 8px 0 0 0;
-  height: 107px
-}
-
-.style-switcher .style-switcher__link {
-  border-radius: 4px;
-  cursor: pointer;
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  margin-right: 8px;
-  transition: all .3s
-}
-
-.style-switcher .style-switcher__link:hover {
-  border: 2px solid #234c87
-}
-
-.style-switcher .style-switcher__link.active {
-  border: 3px solid #234c87
-}
-
-.style-switcher .style-switcher__link--red {
-  background-color: #ff5c72
-}
-
-.style-switcher .style-switcher__link--blue {
-  background-color: #7fb5ff
-}
-
-.style-switcher .style-switcher__link--violet {
-  background-color: #a485f2
-}
-
-.style-switcher .style-switcher__link--green {
-  background-color: #38e0c4
-}
-
-.style-switcher .style-switcher__link--red-gradient {
-  background: linear-gradient(90deg, #ff5c72, #a485f2)
-}
-
-.style-switcher .style-switcher__link--blue-gradient {
-  background: linear-gradient(90deg, #7fb5ff, #3edbfa)
-}
-
-.style-switcher .style-switcher__link--violet-gradient {
-  background: linear-gradient(90deg, #a485f2, #7fb5ff)
-}
-
-.style-switcher .style-switcher__link--green-gradient {
-  background: linear-gradient(90deg, #38e0c4, #7fb5ff)
-}
-
-.style-switcher.style-switcher--active {
-  right: 0
 }
 
 .start-page .header-home__title {
